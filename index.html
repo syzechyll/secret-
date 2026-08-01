@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Girlfriend Day ❤️</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#ffd6e7,#ffeef5);
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.slide{
+position:absolute;
+width:90%;
+max-width:700px;
+background:white;
+padding:35px;
+border-radius:25px;
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+text-align:center;
+opacity:0;
+transform:translateY(30px);
+transition:.8s;
+pointer-events:none;
+}
+
+.slide.active{
+opacity:1;
+transform:translateY(0);
+pointer-events:auto;
+}
+
+h1{
+font-size:2.2rem;
+color:#ff4f88;
+margin-bottom:20px;
+}
+
+p{
+font-size:1.15rem;
+line-height:1.8;
+color:#555;
+}
+
+button{
+margin-top:30px;
+padding:14px 30px;
+border:none;
+border-radius:30px;
+background:#ff5c93;
+color:white;
+font-size:17px;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+.music{
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+margin-top:25px;
+}
+
+.music a{
+text-decoration:none;
+background:#ff8fb3;
+padding:12px 20px;
+border-radius:25px;
+color:white;
+font-weight:bold;
+}
+
+.heart{
+position:fixed;
+top:-20px;
+font-size:20px;
+animation:fall linear infinite;
+color:#ff6b9f;
+opacity:.8;
+}
+
+@keyframes fall{
+0%{
+transform:translateY(-10vh);
+}
+100%{
+transform:translateY(110vh);
+}
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="slide active">
+
+<h1>Happy Girlfriend Day ❤️</h1>
+
+<p>
+This little website is made especially for you.
+</p>
+
+<button onclick="nextSlide()">Next ➜</button>
+
+</div>
+
+<div class="slide">
+
+<h1>🤍</h1>
+
+<p>
+
+I wish you a long, healthy, and beautiful life.
+
+May every year bring you more happiness,
+good health, and countless beautiful memories.
+
+You deserve all the love,
+joy, and blessings in this world.
+
+</p>
+
+<button onclick="nextSlide()">Next ➜</button>
+
+</div>
+
+<div class="slide">
+
+<h1>🌸</h1>
+
+<p>
+
+May you always be happy
+wherever life takes you.
+
+I hope you keep smiling,
+keep chasing your dreams,
+and never lose the beautiful person you are.
+
+No matter where you are,
+I will always wish the very best for you.
+
+</p>
+
+<button onclick="nextSlide()">Next ➜</button>
+
+</div>
+
+<div class="slide">
+
+<h1>Thank You ❤️</h1>
+
+<p>
+
+Thank you for being part of my life.
+
+I may not always know the right words to say,
+but please know that you mean so much to me.
+
+Happy Girlfriend Day.
+
+Take care of yourself,
+and never forget to smile.
+
+</p>
+
+<div class="music">
+
+<a href="https://www.youtube.com/results?search_query=Daniel+Caesar+Always" target="_blank">Always 🎵</a>
+
+<a href="https://www.youtube.com/results?search_query=Daniel+Caesar+Best+Part" target="_blank">Best Part 🎵</a>
+
+<a href="https://www.youtube.com/results?search_query=Daniel+Caesar+Superpowers" target="_blank">Superpowers 🎵</a>
+
+</div>
+
+</div>
+<script>
+  let currentSlide = 0;
+
+const slides = document.querySelectorAll(".slide");
+
+function nextSlide(){
+
+    slides[currentSlide].classList.remove("active");
+
+    currentSlide++;
+
+    if(currentSlide >= slides.length){
+        currentSlide = 0;
+    }
+
+    slides[currentSlide].classList.add("active");
+
+}
+
+
+// falling hearts ❤️
+
+function createHeart(){
+
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+
+    heart.innerHTML = "❤️";
+
+    heart.style.left = Math.random() * 100 + "vw";
+
+    heart.style.animationDuration =
+    (Math.random() * 3 + 2) + "s";
+
+    heart.style.fontSize =
+    (Math.random() * 20 + 15) + "px";
+
+    document.body.appendChild(heart);
+
+
+    setTimeout(()=>{
+        heart.remove();
+    },5000);
+
+}
+
+
+setInterval(createHeart,300);
+
+</script>
+
+</body>
+</html>
